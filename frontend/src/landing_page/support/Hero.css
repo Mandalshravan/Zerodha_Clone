@@ -1,0 +1,74 @@
+#supportHero {
+  background-color: rgb(56, 126, 209);
+  color: white;
+  padding-bottom: 60px;
+}
+
+#supportWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px 0 100px;
+}
+
+.support-logo {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.track-tickets {
+  color: white;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.support-subheading {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 16px 45px 16px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+
+.quick-links p a {
+  color: white;
+  text-decoration: underline;
+  margin-right: 20px;
+}
+
+.featured-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.featured-list {
+  padding-left: 20px;
+}
+
+.featured-list li {
+  margin-bottom: 12px;
+}
+
+.featured-list li a {
+  color: white;
+  text-decoration: underline;
+  font-size: 15px;
+}
