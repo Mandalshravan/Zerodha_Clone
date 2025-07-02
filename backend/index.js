@@ -16,7 +16,7 @@ const positionsRoute = require("./routes/PositionRoute");
 const app = express();
 app.use(
   cors({
-    origin: ["https://zerodha-clone-4rjo.vercel.app/", "https://zerodha-clone-khaki.vercel.app/"],
+    origin: ["https://zerodha-clone-4rjo.vercel.app/", "https://zerodha-clone-khaki.vercel.app/", "https://zerodha-clone-4rjo.vercel.app/signup"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       const data = await axios.post(
-        "https://zerodha-backend-gamma.vercel.app/auth/login",
+        "https://zerodha-clone-erg6.vercel.app/auth/login",
         {
           ...formdata,
         },

@@ -14,14 +14,14 @@ const SellActionWindow = ({ uid }) => {
   const handleSellClick = async () => {
     try {
       const response = await axios.post(
-        "https://zerodha-backend-gamma.vercel.app/order/checkOrders",
+        "https://zerodha-clone-erg6.vercel.app/order/checkOrders",
         {
           name: uid,
           qty: stockQuantity,
         }
       );
       if (response.data.exists) {
-        await axios.post("https://zerodha-backend-gamma.vercel.app/order/newOrders", {
+        await axios.post("https://zerodha-clone-erg6.vercel.app/order/newOrders", {
           name: uid,
           qty: stockQuantity,
           price: stockPrice,

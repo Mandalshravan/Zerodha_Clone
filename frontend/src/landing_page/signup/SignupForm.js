@@ -34,7 +34,7 @@ const SignupForm = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-backend-gamma.vercel.app/auth/signup",
+        "https://zerodha-clone-erg6.vercel.app/auth/signup",
         {
           ...inputValue,
         },
@@ -44,7 +44,7 @@ const SignupForm = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "https://zerodha-dashboard-33xb.onrender.com/dashboard";
+          window.location.href = "https://zerodha-clone-khaki.vercel.app/dashboard";
         }, 1000);
       } else {
         handleError(message);
