@@ -14,24 +14,34 @@ const holdingsRoute = require("./routes/HoldingRoute");
 const positionsRoute = require("./routes/PositionRoute");
 
 const app = express();
-// app.use(
-//   cors({
-//     origin: ["https://zerodha-clone-4rjo.vercel.app/", "https://zerodha-clone-khaki.vercel.app/", "https://zerodha-clone-4rjo.vercel.app/signup"],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true,
-//   })
-// );
-app.use(cors());
+
+// ✅ Configure CORS properly
+const allowedOrigins = [
+  "https://zerodha-clone-4rjo.vercel.app", // ✅ frontend URL
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
+// ✅ Handle preflight OPTIONS request
+app.options("*", cors());
 
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.json());
 
+// ✅ Routes
 app.use("/auth", authRoute);
 app.use("/order", ordersRoute);
 app.use("/holding", holdingsRoute);
 app.use("/position", positionsRoute);
 
+// ✅ MongoDB Connection
 mongoose
   .connect(uri)
   .then(() => {
