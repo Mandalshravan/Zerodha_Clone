@@ -42,7 +42,7 @@ export default function AccountMenu() {
 
   const handleLogout = () => {
     removeCookie("token");
-    window.location.href = "https://zerodha-frontend-s5ov.onrender.com/login";
+    window.location.href = "https://zerodha-clone-4rjo.vercel.app/login";
   };
   return (
     <React.Fragment>

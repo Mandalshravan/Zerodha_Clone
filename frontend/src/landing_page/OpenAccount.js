@@ -16,7 +16,7 @@ function OpenAccount() {
             variant="contained"
             className="mt-3"
             onClick={() =>
-              (window.location.href = "https://zerodha-frontend-s5ov.onrender.com/signup")
+              (window.location.href = "https://zerodha-clone-4rjo.vercel.app/signup")
             }
           >
             Sign up

@@ -21,7 +21,7 @@ function Hero() {
             variant="contained"
             className="mb-5"
             onClick={() =>
-              (window.location.href = "https://zerodha-frontend-s5ov.onrender.com/signup")
+              (window.location.href = "https://zerodha-clone-4rjo.vercel.app/signup")
             }
           >
             Signup Now
