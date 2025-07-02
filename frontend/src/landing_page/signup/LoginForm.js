@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       const data = await axios.post(
-        "https://zerodha-backend-okkt.onrender.com/auth/login",
+        "https://zerodha-backend-wb2w.onrender.com/auth/login",
         {
           ...formdata,
         },
