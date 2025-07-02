@@ -34,7 +34,7 @@ const SignupForm = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-clone-erg6.vercel.app/auth/signup",
+        "https://zerodha-backend-oj2m.onrender.com/auth/signup",
         {
           ...inputValue,
         },
