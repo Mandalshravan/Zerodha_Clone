@@ -14,14 +14,14 @@ const SellActionWindow = ({ uid }) => {
   const handleSellClick = async () => {
     try {
       const response = await axios.post(
-        "https://zerodha-backend-oj2m.onrender.com/order/checkOrders",
+        "https://zerodha-backend-okkt.onrender.com/order/checkOrders",
         {
           name: uid,
           qty: stockQuantity,
         }
       );
       if (response.data.exists) {
-        await axios.post("https://zerodha-backend-oj2m.onrender.com/order/newOrders", {
+        await axios.post("https://zerodha-backend-okkt.onrender.com/order/newOrders", {
           name: uid,
           qty: stockQuantity,
           price: stockPrice,

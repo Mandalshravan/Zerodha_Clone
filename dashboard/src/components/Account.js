@@ -27,7 +27,7 @@ export default function AccountMenu() {
 
   useEffect(() => {
     axios
-      .get("https://zerodha-backend-oj2m.onrender.com/auth/verify", { withCredentials: true })
+      .get("https://zerodha-backend-okkt.onrender.com/auth/verify", { withCredentials: true })
       .then((res) => {
         if (res.data.status) {
           setUsername(res.data.user); //  Set the username
