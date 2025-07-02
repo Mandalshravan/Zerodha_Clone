@@ -45,7 +45,7 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "https://zerodha-dashboard-33xb.onrender.com/dashboard";
+          window.location.href = "https://zerodha-clone-khaki.vercel.app/dashboard";
         }, 2000);
       } else {
         handleError(message);
