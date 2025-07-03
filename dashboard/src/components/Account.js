@@ -27,7 +27,7 @@ export default function AccountMenu() {
 
   useEffect(() => {
     axios
-      .get("https://zerodha-clone-chtq.vercel.app/auth/verify", { withCredentials: true })
+      .get("https://zerodha-clone-lysy.vercel.app/auth/verify", { withCredentials: true })
       .then((res) => {
         if (res.data.status) {
           setUsername(res.data.user); //  Set the username
