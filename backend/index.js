@@ -14,9 +14,14 @@ const holdingsRoute = require("./routes/HoldingRoute");
 const positionsRoute = require("./routes/PositionRoute");
 
 const app = express();
+
+// ✅ CORRECTED CORS: Removed trailing slashes
 app.use(
   cors({
-    origin: ["https://zerodha-clone-4rjo.vercel.app/", "https://zerodha-clone-khaki.vercel.app/"],
+    origin: [
+      "https://zerodha-clone-4rjo.vercel.app",
+      "https://zerodha-clone-khaki.vercel.app"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -31,15 +36,17 @@ app.use("/order", ordersRoute);
 app.use("/holding", holdingsRoute);
 app.use("/position", positionsRoute);
 
+// ✅ Connect MongoDB
 mongoose
   .connect(uri)
   .then(() => {
     console.log("MongoDB connected");
   })
   .catch((err) => {
-    console.log(err);
+    console.error("MongoDB connection error:", err);
   });
 
+// ✅ Start server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
