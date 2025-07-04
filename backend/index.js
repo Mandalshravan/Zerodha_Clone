@@ -5,7 +5,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 56173;
 const uri = process.env.MONGO_URL;
 
 const authRoute = require("./routes/AuthRoute");
