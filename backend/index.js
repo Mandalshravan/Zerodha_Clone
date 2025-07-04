@@ -15,13 +15,10 @@ const positionsRoute = require("./routes/PositionRoute");
 
 const app = express();
 
-// ✅ CORRECTED CORS: Removed trailing slashes
+// ✅ CORS: Allow all origins
 app.use(
   cors({
-    origin: [
-      "https://zerodha-clone-4rjo.vercel.app",
-      "https://zerodha-clone-khaki.vercel.app"
-    ],
+    origin: true, // This allows all origins
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
