@@ -15,14 +15,18 @@ const positionsRoute = require("./routes/PositionRoute");
 
 const app = express();
 
-// ✅ CORS: Allow all origins
+// ✅ CORS: Allow all origins with OPTIONS support
 app.use(
   cors({
     origin: true, // This allows all origins
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
     credentials: true,
   })
 );
+
+// Handle preflight requests for all routes
+app.options("*", cors());
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -32,6 +36,16 @@ app.use("/auth", authRoute);
 app.use("/order", ordersRoute);
 app.use("/holding", holdingsRoute);
 app.use("/position", positionsRoute);
+
+// ✅ Root route handler
+app.get("/", (req, res) => {
+  res.json({ message: "Zerodha Clone Backend API is running!" });
+});
+
+// ✅ Handle 404 routes
+app.use("*", (req, res) => {
+  res.status(404).json({ error: "Route not found" });
+});
 
 // ✅ Connect MongoDB
 mongoose
@@ -47,3 +61,6 @@ mongoose
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+// ✅ Export for Vercel
+module.exports = app;
